@@ -12,3 +12,58 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+//1
+
+//  const galleryListEl = document.querySelector("ul");
+
+//  const elements = images.map(image => {
+  
+//   const galleryItemEl = document.createElement("li");
+//   galleryItemEl.classList.add("img-item");
+
+//   const galleryImgEl = document.createElement("img");
+//   galleryImgEl.src = image.url;
+//   galleryImgEl.alt = image.alt;
+
+//   galleryItemEl.appendChild(galleryImgEl);
+
+//   return galleryItemEl;
+
+// });
+
+// galleryListEl.append(...elements);
+
+
+//2
+
+// const galleryListEl = document.querySelector("ul");
+// const makeGallaryImg = galleryImg =>{
+//   return galleryImg.map(image => {
+  
+//   const galleryItemEl = document.createElement("li");
+//   galleryItemEl.classList.add("img-item");
+
+//   const galleryImgEl = document.createElement("img");
+//   galleryImgEl.src = image.url;
+//     galleryImgEl.alt = image.alt;
+//     galleryItemEl.appendChild(galleryImgEl);
+//     console.log(galleryItemEl);
+//   return galleryItemEl;
+
+// });
+
+// }
+
+// const elements = makeGallaryImg(images);
+// galleryListEl.append(...elements);
+
+
+//3
+const galleryListEl = document.querySelector("ul");
+const element = images
+  .map(function ({ url, alt }) {
+    return `<li><img src = '${url}' alt = '${alt}'></li>`;
+  })
+  .join("");
+galleryListEl.insertAdjacentHTML("afterbegin", element);
